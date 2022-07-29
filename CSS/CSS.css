@@ -1,0 +1,79 @@
+
+
+
+    body {
+        background-color: deepskyblue;
+        align-content: center;
+    }
+
+    input {
+        background-color: lightskyblue;
+        height: 15%;
+        width: 30%;
+        font-size: 130%;
+    }
+
+    img {
+        width: 20%;
+        padding: 2%;
+    }
+
+article {
+    background-color: darkblue;
+    color: white;
+    width: 50em;
+    height: 50em;
+    animation: fadeIn 2s;
+    /*width: 45%;
+    height: 90%;*/
+    /*margin-left: 50%;
+    margin-right: 50%;*/
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*make sure space is reserved for element*/
+/*step 1: set every display same size, position relative*/
+
+.Images_in_article {
+    width: 50%;
+}
+
+a
+{
+    color:aliceblue;
+}
+
+#downButton
+{
+    transform : rotate(90deg);
+}
+
+#upButton {
+    transform: rotate(-90deg);
+}
+
+#downButton, #upButton {
+    width: 10%;
+    height: 5%;
+    margin: 2%;
+    cursor: pointer;
+    padding: 1.5%;
+    border-radius: 50%;
+    /*position:fixed;*/
+}
+
+
+#downButton img, #upButton img {
+    width: 100%;
+    height: 100%;
+}

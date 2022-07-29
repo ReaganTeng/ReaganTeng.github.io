@@ -1,0 +1,744 @@
+var currSubtopic=0;
+
+$(function(){
+    $("#sub_name1").on("click", ShowSubtopic1);
+    $("#sub_name2").on("click", ShowSubtopic2);
+    $("#sub_name3").on("click", ShowSubtopic3);
+    $(".menu").on("click", ShowMainTopic);
+    $(".front").on("click", PrevSubtopic);
+    $(".back").on("click", NextSubtopic);
+    // ____click icons______
+    $("#seal_blue").on("click", SealBlue);
+    $("#clerical_blue").on("click", ClericalBlue);
+    $("#regular_blue").on("click", RegularBlue);
+    $("#semicursive_blue").on("click", SemicursiveBlue);
+    $("#cursive_blue").on("click", CursiveBlue);
+    // _____sub2 buttons_____
+    $("#write_seal").on("click", SealAnimation);
+    $("#write_clerical").on("click", ClericalAnimation);
+    $("#write_regular").on("click", RegularAnimation);
+    $("#write_semi").on("click", SemiAnimation);
+    $("#write_cursive").on("click", CursiveAnimation);
+    // ______click audio_______
+    $("#shufa_speaker").on("click", PlayShufa);
+    $("#seal_speaker").on("click", PlayZhuanshu);
+    $("#clerical_speaker").on("click", PlayLishu);
+    $("#regular_speaker").on("click", PlayKaishu);
+    $("#semi_speaker").on("click", PlayXingshu);
+    $("#cursive_speaker").on("click", PlayCaoshu);
+    // __________Open Board__________
+    $("#paper").on("click", ShowPaperBoard);
+    $(".board_back_p").on("click", HidePaperBoard);
+
+    $("#deskpad").on("click", ShowDeskpadBoard);
+    $(".board_back_d").on("click", HideDeskpadBoard);
+
+    $("#paperweight").on("click", ShowPaperweightBoard);
+    $(".board_back_w").on("click", HidePaperweightBoard);
+
+    $("#brush").on("click", ShowBrushBoard);
+    $(".board_back_b").on("click", HideBrushBoard);
+
+    $("#sealr").on("click", ShowSealBoard);
+    $(".board_back_s").on("click", HideSealBoard);
+
+    $("#inkstone").on("click", ShowInkBoard);
+    $(".board_back_i").on("click", HideInkBoard);
+
+    $(".click_board_p").hide();
+    $(".click_board_d").hide();
+    $(".click_board_w").hide();
+    $(".click_board_b").hide();
+    $(".click_board_s").hide();
+    $(".click_board_i").hide();
+
+    // ShowSubtopic3();
+    ShowMainTopic();
+    CurtainAnimation();
+})
+
+
+function PrevSubtopic(){
+    console.log(currSubtopic);
+    if(currSubtopic==3){
+        ShowSubtopic2();
+    }
+    else if(currSubtopic==2){
+        ShowSubtopic1();
+    }
+};
+function NextSubtopic(){
+    console.log(currSubtopic);
+    if(currSubtopic==0){
+        ShowSubtopic1();
+    }
+    else if(currSubtopic==1){
+        ShowSubtopic2();
+    }
+    else if(currSubtopic==2){
+        ShowSubtopic3();
+    }
+    
+};
+
+function HideSubtopics(){
+    $("#all>div").hide();
+}
+
+function ShowSubtopic1(){
+    HideSubtopics();
+    currSubtopic=1;
+    $("#subtopic1").show();
+}
+
+function ShowSubtopic2(){
+    HideSubtopics();
+    currSubtopic=2;
+    $("#subtopic2").show();
+}
+
+function ShowSubtopic3(){
+    HideSubtopics();
+    currSubtopic=3;
+    $("#subtopic3").show();
+}
+
+function ShowMainTopic(){
+    HideSubtopics();
+    currSubtopic=0;
+    HideSubtopics();
+    $("#MainTopic").show();
+}
+
+// -----------------------------------------------------------------
+function CurtainAnimation(){
+    gsap.to("#curtain1",  {
+        opacity:1,
+        onComplete: CurtainAnimation2
+    });
+}
+function CurtainAnimation2(){
+    gsap.to("#curtain2",  {
+        opacity:1,
+        onComplete: CurtainAnimation3
+    });
+    gsap.to("#curtain1",  {
+        opacity:0
+    });
+}
+function CurtainAnimation3(){
+    gsap.to("#curtain3",  {
+        opacity:1,
+        onComplete: CurtainAnimation4
+    });
+    gsap.to("#curtain2",  {
+        opacity:0
+    });
+}
+function CurtainAnimation4(){
+    gsap.to("#curtain4",  {
+        opacity:1,
+        onComplete: CurtainAnimation5
+    });
+    gsap.to("#curtain3",  {
+        opacity:0
+    });
+}
+function CurtainAnimation5(){
+    gsap.to("#curtain5",  {
+        opacity:1,
+        onComplete: CurtainAnimation6
+    });
+    gsap.to("#curtain4",  {
+        opacity:0
+    });
+}
+function CurtainAnimation6(){
+    gsap.to("#curtain6",  {
+        opacity:1,
+        onComplete: CurtainAnimation7
+    });
+    gsap.to("#curtain5",  {
+        opacity:0
+    });
+}
+function CurtainAnimation7(){
+    gsap.to("#curtain6",  {
+        opacity:0,
+        onComplete: CurtainAnimation8
+    });
+    gsap.to("#curtain5",  {
+        opacity:1
+    });
+}
+function CurtainAnimation8(){
+    gsap.to("#curtain5",  {
+        opacity:0,
+        onComplete: CurtainAnimation9
+    });
+    gsap.to("#curtain4",  {
+        opacity:1
+    });
+}
+function CurtainAnimation9(){
+    gsap.to("#curtain4",  {
+        opacity:0,
+        onComplete: CurtainAnimation10
+    });
+    gsap.to("#curtain3",  {
+        opacity:1
+    });
+}
+function CurtainAnimation10(){
+    gsap.to("#curtain3",  {
+        opacity:0,
+        onComplete: CurtainAnimation11
+    });
+    gsap.to("#curtain2",  {
+        opacity:1
+    });
+}
+function CurtainAnimation11(){
+    gsap.to("#curtain2",  {
+        opacity:0,
+        onComplete: CurtainAnimation
+    });
+    gsap.to("#curtain1",  {
+        opacity:1
+    });
+}
+
+
+// ---------------------------------------
+// _______________________________________________________________________________-
+function SealBlue(){
+    gsap.set("#seal1,#seal2,#seal3,#seal4,#seal5,#seal6",{opacity: 0})
+    ShowSealOnly()
+    gsap.to("#seal_blue",  {
+        opacity:1,
+    });
+    gsap.to("#seal_box",  {
+        opacity:1,
+    });
+    gsap.to("#cursive_blue",  {
+        opacity:0,
+    });
+    gsap.to("#semicursive_blue",  {
+        opacity:0,
+    });
+    gsap.to("#regular_blue",  {
+        opacity:0,
+    });
+    gsap.to("#clerical_blue",  {
+        opacity:0,
+    });
+    gsap.to("#grid",  {
+        opacity:1,
+    });
+    gsap.to("#seal_text",  {
+        opacity:1,
+    });
+    gsap.to("#seal_line",  {
+        opacity:1,
+    });
+    gsap.to("#write_seal",  {
+        opacity:1,
+    });
+}
+function ClericalBlue(){
+    gsap.set("#clerical1,#clerical2,#clerical3,#clerical4,#clerical5,#clerical6",{opacity: 0})
+    ShowClericalOnly()
+    gsap.to("#clerical_blue",  {
+        opacity:1,
+    });
+    gsap.to("#clerical_box",  {
+        opacity:1,
+    });
+    gsap.to("#cursive_blue",  {
+        opacity:0,
+    });
+    gsap.to("#semicursive_blue",  {
+        opacity:0,
+    });
+    gsap.to("#regular_blue",  {
+        opacity:0,
+    });
+    gsap.to("#seal_blue",  {
+        opacity:0,
+    });
+    gsap.to("#grid",  {
+        opacity:1,
+    });
+    gsap.to("#clerical_text",  {
+        opacity:1,
+    });
+    gsap.to("#clerical_grid",  {
+        opacity:1,
+    });
+    gsap.to("#clerical_line",  {
+        opacity:1,
+    });
+    gsap.to("#write_clerical",  {
+        opacity:1,
+    });
+}
+function RegularBlue(){
+    gsap.set("#regular1,#regular2,#regular3,#regular4,#regular5,#regular6",{opacity: 0})
+    ShowRegularOnly()
+    gsap.to("#regular_blue",  {
+        opacity:1,
+    });
+    gsap.to("#regular_box",  {
+        opacity:1,
+    });
+    gsap.to("#cursive_blue",  {
+        opacity:0,
+    });
+    gsap.to("#semicursive_blue",  {
+        opacity:0,
+    });
+    gsap.to("#seal_blue",  {
+        opacity:0,
+    });
+    gsap.to("#clerical_blue",  {
+        opacity:0,
+    });
+    gsap.to("#grid",  {
+        opacity:1,
+    });
+    gsap.to("#regular_text",  {
+        opacity:1,
+    });
+    gsap.to("#regular_grid",  {
+        opacity:1,
+    });
+    gsap.to("#regular_line",  {
+        opacity:1,
+    });
+    gsap.to("#write_regular",  {
+        opacity:1,
+    });
+}
+function SemicursiveBlue(){
+    gsap.set("#semi1,#semi2,#semi3,#semi4",{opacity: 0})
+    ShowSemiOnly()
+    gsap.to("#semicursive_blue",  {
+        opacity:1,
+    });
+    gsap.to("#semi_box",  {
+        opacity:1,
+    });
+    gsap.to("#cursive_blue",  {
+        opacity:0,
+    });
+    gsap.to("#seal_blue",  {
+        opacity:0,
+    });
+    gsap.to("#regular_blue",  {
+        opacity:0,
+    });
+    gsap.to("#clerical_blue",  {
+        opacity:0,
+    });
+    gsap.to("#grid",  {
+        opacity:1,
+    });
+    gsap.to("#semi_text",  {
+        opacity:1,
+    });
+    gsap.to("#semi_grid",  {
+        opacity:1,
+    });
+    gsap.to("#semi_line",  {
+        opacity:1,
+    });
+    gsap.to("#write_semi",  {
+        opacity:1,
+    });
+}
+function CursiveBlue(){
+    gsap.set("#cursive1,#cursive2",{opacity: 0})
+    ShowCursiveOnly()
+    gsap.to("#cursive_blue",  {
+        opacity:1,
+    });
+    gsap.to("#cursive_box",  {
+        opacity:1,
+    });
+    gsap.to("#seal_blue",  {
+        opacity:0,
+    });
+    gsap.to("#semicursive_blue",  {
+        opacity:0,
+    });
+    gsap.to("#regular_blue",  {
+        opacity:0,
+    });
+    gsap.to("#clerical_blue",  {
+        opacity:0,
+    });
+    gsap.to("#grid",  {
+        opacity:1,
+    });
+    gsap.to("#cursive_text",  {
+        opacity:1,
+    });
+    gsap.to("#cursive_grid",  {
+        opacity:1,
+    });
+    gsap.to("#cursive_line",  {
+        opacity:1,
+    });
+    gsap.to("#write_cursive",  {
+        opacity:1,
+    });
+}
+
+// -------------show only------------------------------------
+
+function ShowClericalOnly(){
+    gsap.to("#seal_box",  {
+        opacity:0,
+    });
+    gsap.to("#regular_box",  {
+        opacity:0,
+    });
+    gsap.to("#semi_box",  {
+        opacity:0,
+    });
+    gsap.to("#cursive_box",  {
+        opacity:0,
+    });
+}
+
+function ShowSealOnly(){
+    gsap.to("#clerical_box",  {
+        opacity:0,
+    });
+    gsap.to("#regular_box",  {
+        opacity:0,
+    });
+    gsap.to("#semi_box",  {
+        opacity:0,
+    });
+    gsap.to("#cursive_box",  {
+        opacity:0,
+    });
+}
+
+function ShowRegularOnly(){
+    gsap.to("#clerical_box",  {
+        opacity:0,
+    });
+    gsap.to("#seal_box",  {
+        opacity:0,
+    });
+    gsap.to("#semi_box",  {
+        opacity:0,
+    });
+    gsap.to("#cursive_box",  {
+        opacity:0,
+    });
+}
+
+function ShowSemiOnly(){
+    gsap.to("#clerical_box",  {
+        opacity:0,
+    });
+    gsap.to("#seal_box",  {
+        opacity:0,
+    });
+    gsap.to("#regular_box",  {
+        opacity:0,
+    });
+    gsap.to("#cursive_box",  {
+        opacity:0,
+    });
+}
+
+function ShowCursiveOnly(){
+    gsap.to("#clerical_box",  {
+        opacity:0,
+    });
+    gsap.to("#seal_box",  {
+        opacity:0,
+    });
+    gsap.to("#regular_box",  {
+        opacity:0,
+    });
+    gsap.to("#cursive_box",  {
+        opacity:1,
+    });
+    gsap.to("#semi_box",  {
+        opacity:0,
+    });
+}
+
+
+
+// ----------------stroke animation------------------
+
+function SealAnimation(){
+    // gsap.set("#seal1,#seal2",{opacity: 0})
+    gsap.to("#seal1", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: SealAnimation2
+    });
+}
+function SealAnimation2(){
+    gsap.to("#seal2", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: SealAnimation3
+    });
+}
+function SealAnimation3(){
+    gsap.to("#seal3", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: SealAnimation4
+    });
+}
+function SealAnimation4(){
+    gsap.to("#seal4", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: SealAnimation5
+    });
+}
+function SealAnimation5(){
+    gsap.to("#seal5", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: SealAnimation6
+    });
+}
+function SealAnimation6(){
+    gsap.to("#seal6", 1, {
+        opacity:1,
+        ease: "none"
+    });
+}
+// --------------------------------------
+
+function ClericalAnimation(){
+    gsap.to("#clerical1", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: ClericalAnimation2
+    });
+}
+function ClericalAnimation2(){
+    gsap.to("#clerical2", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: ClericalAnimation3
+    });
+}
+function ClericalAnimation3(){
+    gsap.to("#clerical3", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: ClericalAnimation4
+    });
+}
+function ClericalAnimation4(){
+    gsap.to("#clerical4", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: ClericalAnimation5
+    });
+}
+function ClericalAnimation5(){
+    gsap.to("#clerical5", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: ClericalAnimation6
+    });
+}
+function ClericalAnimation6(){
+    gsap.to("#clerical6", 1, {
+        opacity:1,
+        ease: "none"
+    });
+}
+// -----------------------------------------
+function RegularAnimation(){
+    gsap.to("#regular1", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: RegularAnimation2
+    });
+}
+function RegularAnimation2(){
+    gsap.to("#regular2", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: RegularAnimation3
+    });
+}
+function RegularAnimation3(){
+    gsap.to("#regular3", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: RegularAnimation4
+    });
+}
+function RegularAnimation4(){
+    gsap.to("#regular4", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: RegularAnimation5
+    });
+}
+function RegularAnimation5(){
+    gsap.to("#regular5", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: RegularAnimation6
+    });
+}
+function RegularAnimation6(){
+    gsap.to("#regular6", 1, {
+        opacity:1,
+        ease: "none"
+    });
+}
+// -----------------------------------------
+function SemiAnimation(){
+    gsap.to("#semi1", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: SemiAnimation2
+    });
+}
+function SemiAnimation2(){
+    gsap.to("#semi2", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: SemiAnimation3
+    });
+}
+function SemiAnimation3(){
+    gsap.to("#semi3", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: SemiAnimation4
+    });
+}
+function SemiAnimation4(){
+    gsap.to("#semi4", 1, {
+        opacity:1,
+        ease: "none",
+    });
+}
+// -----------------------------------------
+function CursiveAnimation(){
+    gsap.to("#cursive1", 1, {
+        opacity:1,
+        ease: "none",
+        onComplete: CursiveAnimation2
+    });
+}
+function CursiveAnimation2(){
+    gsap.to("#cursive2", 1, {
+        opacity:1,
+        ease: "none",
+    });
+}
+// -------------------------------------------------------------------------------
+function ShowPaperBoard(){
+    $(".click_board_p").show();
+    $("#scroll_sub3").hide();
+    $("#sub3text").hide();
+
+}
+function HidePaperBoard(){
+    $(".click_board_p").hide();
+    $("#scroll_sub3").show();
+    $("#sub3text").show();
+}
+function ShowDeskpadBoard(){
+    $(".click_board_d").show();
+    $("#scroll_sub3").hide();
+    $("#sub3text").hide();
+
+}
+function HideDeskpadBoard(){
+    $(".click_board_d").hide();
+    $("#scroll_sub3").show();
+    $("#sub3text").show();
+}
+function ShowPaperweightBoard(){
+    $(".click_board_w").show();
+    $("#scroll_sub3").hide();
+    $("#sub3text").hide();
+
+}
+function HidePaperweightBoard(){
+    $(".click_board_w").hide();
+    $("#scroll_sub3").show();
+    $("#sub3text").show();
+}
+function ShowBrushBoard(){
+    $(".click_board_b").show();
+    $("#scroll_sub3").hide();
+    $("#sub3text").hide();
+
+}
+function HideBrushBoard(){
+    $(".click_board_b").hide();
+    $("#scroll_sub3").show();
+    $("#sub3text").show();
+}
+function ShowSealBoard(){
+    $(".click_board_s").show();
+    $("#scroll_sub3").hide();
+    $("#sub3text").hide();
+
+}
+function HideSealBoard(){
+    $(".click_board_s").hide();
+    $("#scroll_sub3").show();
+    $("#sub3text").show();
+}
+function ShowInkBoard(){
+    $(".click_board_i").show();
+    $("#scroll_sub3").hide();
+    $("#sub3text").hide();
+
+}
+function HideInkBoard(){
+    $(".click_board_i").hide();
+    $("#scroll_sub3").show();
+    $("#sub3text").show();
+}
+
+// -------------------Audio------------------------------------
+var y = document.getElementById("shufa"); 
+var x = document.getElementById("zhuanshu"); 
+var x1 = document.getElementById("lishu"); 
+var x2 = document.getElementById("kaishu"); 
+var x3 = document.getElementById("xingshu"); 
+var x4 = document.getElementById("caoshu"); 
+
+function PlayShufa() { 
+    y.play(); 
+  } 
+function PlayZhuanshu() { 
+    x.play(); 
+  } 
+function PlayLishu() { 
+    x1.play(); 
+  } 
+function PlayKaishu() { 
+    x2.play(); 
+  } 
+function PlayXingshu() { 
+    x3.play(); 
+  } 
+function PlayCaoshu() { 
+    x4.play(); 
+  } 
+  
