@@ -1,76 +1,138 @@
-function clickedMe() {
-    document.getElementById("hist").style.backgroundColor = "pink"; // me return the event
-}
 
-const bUp = document.querySelector("#upButton");
+
+const selectedbutton = document.querySelectorAll(".timeline");
 const bDown = document.querySelector("#downButton");
+const bUp = document.querySelector("#upButton");
+const bDown_con = document.querySelector("#downButton_con");
+const bUp_con = document.querySelector("#upButton_con");
+//const bUp_con = document.querySelector("#upButton_content");
+//const bDown_con = document.querySelector("#downButton_content");
 
-
-bUp.addEventListener("click", goUp);
 bDown.addEventListener("click", goDown);
+bUp.addEventListener("click", goUp);
+bDown_con.addEventListener("click", goDown);
+bUp_con.addEventListener("click", goUp);
+
+
+//bUp_con.addEventListener("click", goUp);
+//bDown_con.addEventListener("click", goDown);
 
 
 
 
 
-//display none of the articles
+//for (var j = 0; j < selectedbutton.length; j++)
+//{
+    
+//    selectedbutton[j].addEventListener("click", arrayselected);
+//};
+
+//display current list
+
+
+
+//selectedbutton.addEventListener("click", arrayselected);
+//bDown.addEventListener("click", goDown);
+
+
 //select all the articles with class art-cls
 const art_list = document.querySelectorAll(".art-cls");
-//apply these to here
-//rezize all articles to small
-//rezize current one to big size
+//display none of the articles
 art_list.forEach(ele => {
-
-
-
-    //ele.style.width = "25em";
-    //ele.style.height = "25em";
-    //ele[current_arti].style.height = "50em";
-    //ele[current_arti].style.width = "50em";
-
     ele.style.display = "none";
-    //art_list[current_arti - 1].style.display = "block";
-    //art_list[current_arti - 1].style.width = "25em";
-    //art_list[current_arti - 1].style.height = "25em";
-    //art_list[current_arti - 1].style.display = "block";
-    //art_list[current_arti - 1].style.width = "25em";
-    //art_list[current_arti - 1].style.height = "25em";
+    
 });
 
 
-
-
+//for (var j = 0; j < selectedbutton.length; j++) {
+//    selectedbutton[j].addEventListener("click"), (e) => {
+//        e.currentTarget.nextElementSibiling.classList.toggle(arrayselected)
+//    };
+//}
 
 function displayCur() {
-    if (current_arti != 0) {
-        art_list[current_arti - 2].style.display = "none";
-        art_list[current_arti - 1].style.display = "block";
-        art_list[current_arti - 1].style.width = "25em";
-        art_list[current_arti - 1].style.height = "25em";
-    }
-    else {
-        art_list[current_arti + 2].style.display = "none";
-        
+    //if (current_arti != 0) {
+    //    art_list[current_arti - 2].style.display = "none";
+    //    art_list[current_arti - 1].style.display = "block";
+    //    art_list[current_arti - 1].style.width = "25em";
+    //    art_list[current_arti - 1].style.height = "25em";
+    //    //art_list[current_arti].style.display = "none"; 
+    //}
+    //else {
+    //    art_list[current_arti + 2].style.display = "none";
+    //}
+    //art_list[current_arti].style.display = "block";
+    //art_list[current_arti].style.width = "50em";
+    //art_list[current_arti].style.height = "50em";
+    //if (current_arti != art_list.length - 1) {
+    //    art_list[current_arti + 1].style.display = "block";
+    //    art_list[current_arti + 1].style.width = "25em";
+    //    art_list[current_arti + 1].style.height = "25em";
+    //    art_list[current_arti + 2].style.display = "none";
+    //}
+
+
+    //art_list[current_arti].style.display = "block";
+
+    for (var j = 0; j < art_list.length; j++) {
+
+        if (j == current_arti) {
+            art_list[j].style.display = "block";
+            selectedbutton[j].style.backgroundColor = "cornflowerblue";
+        }
+        else {
+            art_list[j].style.display = "none";
+            selectedbutton[j].style.backgroundColor = "darkturquoise";
+
+        }
     }
 
-    art_list[current_arti].style.display = "block";
-    art_list[current_arti].style.width = "50em";
-    art_list[current_arti].style.height = "50em";
+
+
+    //}
+    //else {
+    //    art_list[current_arti].style.display = "none";
+
+    //}
+    
+    
+}
+
+
+/*//animation least priority
+//prioritise on responsive*/
+//function arrayselected() {
+//    //if (current_arti != art_list.length - 1) {
+//    //    current_arti++;
+//    //    displayCur();
+//    //}
+//    //else {
+//    //    alert("End of page!");
+//    //}
+//    //current_arti = ;
+//    alert(j);
+//    //return indexOf();
+//    //alert(selectedbutton.indexOf);
+//    displayCur();
+//}
+
+
+function goDown() {
 
     if (current_arti != art_list.length - 1) {
-        art_list[current_arti + 1].style.display = "block";
-        art_list[current_arti + 1].style.width = "25em";
-        art_list[current_arti + 1].style.height = "25em";
-        art_list[current_arti + 2].style.display = "none";
-
+        current_arti++;
+        displayCur();
+    }
+    else {
+        alert("End of page!");
     }
 }
+
 
 
 
 function goUp() {
     if (current_arti != 0) {
-        //art_list[current_arti].style.display = "none";
         current_arti--;
         displayCur();
     }
@@ -79,21 +141,23 @@ function goUp() {
     }
 }
 
-//alert(art_list.length);
-//make it display one article element at a time
-function goDown() {
 
-    if (current_arti != art_list.length - 1) {
-        //art_list[current_arti].style.display = "none";
-        current_arti++;
-        displayCur();
-    }
-    else {
-        alert("End of page!");
-    }
- 
-}
-
-//display current list
 var current_arti = 0;
+
+
 displayCur();
+
+
+
+
+hambutton.addEventListener("click", () => {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+);
+
+

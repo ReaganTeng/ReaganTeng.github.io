@@ -14,50 +14,88 @@
 
     <h1>History</h1>
 
+    <!--Top navigation menu to switch between pages-->
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" >Homepage</a>
+        <a href="General_info.html">General</a>
+        <a href="History.html" class="active">History</a>
+        <a href="Notable.html">Notable_People</a>
+        <a href="#" id="hambutton" class="icon">=</a>
+    </div> 
 
-    <button id = "upButton"><img src="Images/arrow.png"/></button>
+    <!--side navigation menu to switch between time periods-->
+    <nav class="sidebar">
+        <h3>Timelines</h3>
+        <div class ="con">
+            <button id = "upButton"><img src="Images/arrow.png"/></button>
+        </div>
+        <div class ="con">
+            <button id = "downButton"><img src="Images/arrow.png"/></button>
+        </div>
 
-
-    <article id = "art1" class ="art-cls">
-        <h1>Pre 1956</h1>
-        <p>Stanford University</p>
-        <p>Served as military base</p>
-    </article>
-
-    <article id = "art2" class ="art-cls">
-        <h1>1950s</h1>
-        <p>William Shockley founded the transistor, the most important invention in modern computing</p>
-        <p>
-            Due to Shockley's difficult treatment towards his employees, 8 of them decided to quit his company and founded
-            their own company, Fairchild Semiconductors.
-        </p>
-        <p>
-            After some time, those employees would dispand again and found other notable companies, like Intel.
-        </p>
-
-        <img src ="Images/William_Shockley.jpg"/>
-        <img src ="Images/1st_ibm_plant.jpg"/>
-        <img src ="Images/traitorous_8.jpg"/>
-
-    </article>
-
-    <article id = "art3" class ="art-cls">
-        <h1>1960s</h1>
-        <p></p>
-    </article>
-
-    <article id = "art4" class ="art-cls">
-        <h1>1970s</h1>
-        <p>Rise of computer culture, more modern technological companies started to rise</p>
-    </article>
+        <a class="timeline">Pre 1956</a>
+        <img id = "downButton" src="Images/arrow.png"/>
+        <a class="timeline">1956</a>
+        <img id = "downButton" src="Images/arrow.png"/>
+        <a class="timeline">1960s</a>
+        <img id = "downButton" src="Images/arrow.png"/>
+        <a class="timeline">1970s</a>
+        <img id = "downButton" src="Images/arrow.png"/>
+        <a class="timeline">2000s</a>
 
 
-    <article id = "art5" class ="art-cls">
-        <h1>2000s</h1>
-        <p>Silicon Valley is now the center of technology development, and support newer ones along the way</p>
-    </article>
+    </nav>
 
-    <button id = "downButton"><img src="Images/arrow.png"/></button>
+    <div class="content">
+        <div class ="con">
+            <button id = "upButton_con"  class  ="content_button_up"><img src="Images/arrow.png"/></button>
+        </div>
+        
 
+        <article id = "art0" class ="art-cls">
+            <h1>Pre 1956</h1>
+            <p>Stanford University</p>
+            <p>Served as military base</p>
+        </article>
+
+        <article id = "art1" class ="art-cls">
+            <h1>1956</h1>
+            <p>William Shockley founded the transistor, the most important invention in modern computing</p>
+            <p>
+                Due to Shockley's difficult treatment towards his employees, 8 of them decided to quit his company and founded
+                their own company, Fairchild Semiconductors.
+            </p>
+            <p>
+                After some time, those employees would dispand again and found other notable companies, like Intel.
+            </p>
+
+            <img src ="Images/William_Shockley.jpg"/>
+            <img src ="Images/1st_ibm_plant.jpg"/>
+            <img src ="Images/traitorous_8.jpg"/>
+
+        </article>
+
+        <article id = "art2" class ="art-cls">
+            <h1>1960s</h1>
+            <p></p>
+        </article>
+
+
+        <article id = "art3" class ="art-cls">
+            <h1>1970s</h1>
+            <p>Rise of computer culture, more modern technological companies started to rise</p>
+        </article>
+
+
+
+        <article id = "art4" class ="art-cls">
+            <h1>2000s</h1>
+            <p>Silicon Valley is now the center of technology development, and support newer ones along the way</p>
+        </article>
+
+        <div class ="con">
+            <button id = "downButton_con" class  ="content_button_down"><img src="Images/arrow.png"/></button>
+        </div>
+    </div>
 </body>
 </html>

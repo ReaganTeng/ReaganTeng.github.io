@@ -6,27 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title></title>
-    <link rel="stylesheet" type="text/css" href="./index_files/CSS.css">
+    <link rel="stylesheet" type="text/css" href="CSS/CSS.css">
+    <script src="js/JS.js" defer></script>
 
-    <script src="./index_files/JS.js.download" defer="">
-
-    </script>
 </head>
 <body>
 
     <h1>Silicon Valley</h1>
 
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Homepage</a>
+        <a href="General_info.html">General</a>
+        <a href="History.html">History</a>
+        <a href="Notable.html">Notable_People</a>
+        <a href="#" id="hambutton" class="icon">=</a>
+    </div> 
 
-    <img style="width: 50%; margin-left:25%;" src="./index_files/index_img.jpg">
 
-    <div onmouseover="clickedMe()">
-        <input type="button" id="hist" onclick="window.location.href = 'History.html'" value="History" style="background-color: pink;">
-    </div>
-    <div onmouseover="clickedMe()">
-        <input type="button" onclick="window.location.href = 'General_info.html'" value="general info">
-    </div>
-    <div onmouseover="clickedMe()">
-        <input type="button" onclick="window.location.href = 'Notable.html'" value="Notable people/companies">
-    </div>
+    <img class="index_img" src="./index_files/index_img.jpg">
+
 
 </body></html>
