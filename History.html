@@ -1,101 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="CSS/CSS.css">
-    <script src="js/JS.js" defer></script>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="CSS/CSS.css">
+        <script src="js/collapse_uncollapse_topnav.js" defer></script>
+        <script src="js/navigate_articles.js" defer></script>
 
-</head>
-<body>
+    </head>
+    <body>
 
-    <h1>History</h1>
+        <h1>History</h1>
 
-    <!--Top navigation menu to switch between pages-->
-    <div class="topnav" id="myTopnav">
-        <a href="index.html" >Homepage</a>
-        <a href="General_info.html">General</a>
-        <a href="History.html" class="active">History</a>
-        <a href="Notable.html">Notable_People</a>
-        <a href="#" id="hambutton" class="icon">=</a>
-    </div> 
+        <!--Top navigation menu to switch between pages-->
+        <div class="topnav" id="myTopnav">
+            <a href="#" id="hambutton" class="icon">=</a>
+            <a href="index.html" >Homepage</a>
+            <a href="General_info.html">General</a>
+            <a href="History.html" class="active">History</a>
+            <a href="Notable.html">Notable People</a>
+        </div> 
 
-    <!--side navigation menu to switch between time periods-->
-    <nav class="sidebar">
-        <h3>Timelines</h3>
-        <div class ="con">
-            <button id = "upButton"><img src="Images/arrow.png"/></button>
+        <!--side navigation menu to switch between time periods-->
+        <nav class="sidebar">
+            <h3>Timelines</h3>
+            <div class ="con">
+                <button id = "upButton"><img src="Images/arrow.png"/></button>
+            </div>
+            <div class ="con">
+                <button id = "downButton"><img src="Images/arrow.png"/></button>
+            </div>
+
+            <a class="timeline">Pre 1956</a>
+            <img id = "downButton" src="Images/arrow.png"/>
+            <a class="timeline">1956</a>
+            <img id = "downButton" src="Images/arrow.png"/>
+            <a class="timeline">1960s</a>
+            <img id = "downButton" src="Images/arrow.png"/>
+            <a class="timeline">1970s</a>
+            <img id = "downButton" src="Images/arrow.png"/>
+            <a class="timeline">2000s</a>
+
+
+        </nav>
+
+        <div class="content">
+            <div class ="con">
+                <button id = "upButton_con"  class  ="content_button_up"><img src="Images/arrow.png"/></button>
+            </div>
+            
+
+            <article id = "art0" class ="art-cls">
+                <h1>Pre 1956</h1>
+                <p>Stanford University</p>
+                <p>Served as military base</p>
+            </article>
+
+            <article id = "art1" class ="art-cls">
+                <h1>1956</h1>
+                <p>William Shockley founded the transistor, the most important invention in modern computing</p>
+                <p>
+                    Due to Shockley's difficult treatment towards his employees, 8 of them decided to quit his company and founded
+                    their own company, Fairchild Semiconductors.
+                </p>
+                <p>
+                    After some time, those employees would dispand again and found other notable companies, like Intel.
+                </p>
+                <figure>
+                    <img src ="Images/William_Shockley.jpg"/>
+                    <figcaption>William Shockley, inventor of transistor</figcaption>
+                </figure>
+
+                <figure>
+                    <img src ="Images/1st_ibm_plant.jpg"/>
+                    <figcaption>The first IBM HQ</figcaption>
+                </figure>
+
+                <figure>
+
+                    <img src ="Images/traitorous_8.jpg"/>
+                    <figcaption>The traitorous 8</figcaption>
+
+                </figure>
+
+            </article>
+
+            <article id = "art2" class ="art-cls">
+                <h1>1960s</h1>
+                <p></p>
+            </article>
+
+
+            <article id = "art3" class ="art-cls">
+                <h1>1970s</h1>
+                <p>Homebrew Computer Club is founded, influencing the rise of computer culture and technological innovations</p>
+
+                <figure>
+                    <img src ="Images/jobs_and_wozniak.jpg"/>
+                    <figcaption>Steve Jobs and Steve Wozniak are few of the famous members of Homebrew Computer Club</figcaption>
+                </figure>
+
+                <figure>
+                    <img src ="Images/HBC_founder.jpg"/>
+                    <figcaption>Gordon French, the co-founder of Hombrew Computer Club</figcaption>
+                </figure>
+            </article>
+
+
+
+            <article id = "art4" class ="art-cls">
+                <h1>2000s</h1>
+                <p>Silicon Valley is now the center of technology development, and support newer ones along the way</p>
+            </article>
+
+            <div class ="con">
+                <button id = "downButton_con" class  ="content_button_down"><img src="Images/arrow.png"/></button>
+            </div>
         </div>
-        <div class ="con">
-            <button id = "downButton"><img src="Images/arrow.png"/></button>
-        </div>
-
-        <a class="timeline">Pre 1956</a>
-        <img id = "downButton" src="Images/arrow.png"/>
-        <a class="timeline">1956</a>
-        <img id = "downButton" src="Images/arrow.png"/>
-        <a class="timeline">1960s</a>
-        <img id = "downButton" src="Images/arrow.png"/>
-        <a class="timeline">1970s</a>
-        <img id = "downButton" src="Images/arrow.png"/>
-        <a class="timeline">2000s</a>
-
-
-    </nav>
-
-    <div class="content">
-        <div class ="con">
-            <button id = "upButton_con"  class  ="content_button_up"><img src="Images/arrow.png"/></button>
-        </div>
-        
-
-        <article id = "art0" class ="art-cls">
-            <h1>Pre 1956</h1>
-            <p>Stanford University</p>
-            <p>Served as military base</p>
-        </article>
-
-        <article id = "art1" class ="art-cls">
-            <h1>1956</h1>
-            <p>William Shockley founded the transistor, the most important invention in modern computing</p>
-            <p>
-                Due to Shockley's difficult treatment towards his employees, 8 of them decided to quit his company and founded
-                their own company, Fairchild Semiconductors.
-            </p>
-            <p>
-                After some time, those employees would dispand again and found other notable companies, like Intel.
-            </p>
-
-            <img src ="Images/William_Shockley.jpg"/>
-            <img src ="Images/1st_ibm_plant.jpg"/>
-            <img src ="Images/traitorous_8.jpg"/>
-
-        </article>
-
-        <article id = "art2" class ="art-cls">
-            <h1>1960s</h1>
-            <p></p>
-        </article>
-
-
-        <article id = "art3" class ="art-cls">
-            <h1>1970s</h1>
-            <p>Rise of computer culture, more modern technological companies started to rise</p>
-        </article>
-
-
-
-        <article id = "art4" class ="art-cls">
-            <h1>2000s</h1>
-            <p>Silicon Valley is now the center of technology development, and support newer ones along the way</p>
-        </article>
-
-        <div class ="con">
-            <button id = "downButton_con" class  ="content_button_down"><img src="Images/arrow.png"/></button>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

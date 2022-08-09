@@ -1,24 +1,16 @@
 
 
+
 const selectedbutton = document.querySelectorAll(".timeline");
 const bDown = document.querySelector("#downButton");
 const bUp = document.querySelector("#upButton");
 const bDown_con = document.querySelector("#downButton_con");
 const bUp_con = document.querySelector("#upButton_con");
-//const bUp_con = document.querySelector("#upButton_content");
-//const bDown_con = document.querySelector("#downButton_content");
 
 bDown.addEventListener("click", goDown);
 bUp.addEventListener("click", goUp);
 bDown_con.addEventListener("click", goDown);
 bUp_con.addEventListener("click", goUp);
-
-
-//bUp_con.addEventListener("click", goUp);
-//bDown_con.addEventListener("click", goDown);
-
-
-
 
 
 //for (var j = 0; j < selectedbutton.length; j++)
@@ -150,14 +142,7 @@ displayCur();
 
 
 
-hambutton.addEventListener("click", () => {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-);
+
+    
 
 
