@@ -1,17 +1,27 @@
 
 
 
-const selectedbutton = document.querySelectorAll(".timeline");
 const bDown = document.querySelector("#downButton");
 const bUp = document.querySelector("#upButton");
 const bDown_con = document.querySelector("#downButton_con");
 const bUp_con = document.querySelector("#upButton_con");
+
+
 
 bDown.addEventListener("click", goDown);
 bUp.addEventListener("click", goUp);
 bDown_con.addEventListener("click", goDown);
 bUp_con.addEventListener("click", goUp);
 
+
+
+const selectedbutton = document.querySelectorAll(".timeline");
+
+
+//selectedbutton[0].addEventListener("click", chooseApple);
+//selectedbutton[1].addEventListener("click", chooseApple);
+
+//alert(selectedbutton.indexOf(selectedbutton[0]));
 
 //for (var j = 0; j < selectedbutton.length; j++)
 //{
@@ -21,7 +31,12 @@ bUp_con.addEventListener("click", goUp);
 
 //display current list
 
-
+//make use of more spaces
+//if goes small, make picture big
+//Colour can be lesser
+//font spacing
+//nicer buttons
+//wording color
 
 //selectedbutton.addEventListener("click", arrayselected);
 //bDown.addEventListener("click", goDown);
@@ -78,14 +93,6 @@ function displayCur() {
 
         }
     }
-
-
-
-    //}
-    //else {
-    //    art_list[current_arti].style.display = "none";
-
-    //}
     
     
 }
@@ -109,6 +116,12 @@ function displayCur() {
 //}
 
 
+
+function chooseApple(a) {
+    current_arti = a;
+    displayCur();
+}
+
 function goDown() {
 
     if (current_arti != art_list.length - 1) {
@@ -116,7 +129,9 @@ function goDown() {
         displayCur();
     }
     else {
+    //    document.getElementById("informing") = "End of page";
         alert("End of page!");
+
     }
 }
 

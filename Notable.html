@@ -11,42 +11,51 @@
     <script src="js/collapse_uncollapse_topnav.js" defer></script>
     <script src="js/navigate_articles.js" defer></script>
 
+
+    
 </head>
 <body>
-    <h1>Notable people/companies in Silicon Valley</h1>
-
-
 
     <div class="topnav" id="myTopnav">
         <a href="#" id="hambutton" class="icon">=</a>
         <a href="index.html" >Homepage</a>
         <a href="General_info.html">General</a>
-        <a href="History.html" class="active">History</a>
-        <a href="Notable.html">Notable People</a>
+        <a href="History.html" >History</a>
+        <a href="Notable.html" class="active">Notable People</a>
     </div> 
 
+
+    <!-- <div id = "informing" ></div> -->
+
+
+    
 
     <!--side navigation menu to switch between companies-->
     <nav class="sidebar">
         <h3>Timelines</h3>
         <div class ="con">
-            <button id = "upButton"><img src="Images/arrow.png"/></button>
+            <a id = "upButton" class ="up"><img src="Images/arrow.png"/></a>
         </div>
         <div class ="con">
-            <button id = "downButton"><img src="Images/arrow.png"/></button>
+            <a id = "downButton" class ="down"><img src="Images/arrow.png"/></a>
         </div>
 
-        <a class="timeline">Apple</a>
-        <img id = "downButton" src="Images/arrow.png"/>
+        <a  class="timeline">Apple</a>
+        <img id = "downButton" src="Images/timeline_arrow.png"/>
+
         <a class="timeline">Microsoft</a>
-        <img id = "downButton" src="Images/arrow.png"/>
+        <img id = "downButton" src="Images/timeline_arrow.png"/>
+
         <a class="timeline">Google</a>
     </nav>
 
 
+    
     <div class="content">
+        <h1 id ="notableh1">Notable people/companies in Silicon Valley</h1>
+
         <div class ="con">
-            <button id = "upButton_con"  class  ="content_button_up"><img src="Images/arrow.png"/></button>
+            <a id = "upButton_con"  class  ="content_button_up"><img src="Images/arrow.png"/></a>
         </div>
 
         <article class = "art-cls">
@@ -73,7 +82,7 @@
         </article>
 
         <div class ="con">
-            <button id = "downButton_con" class  ="content_button_down"><img src="Images/arrow.png"/></button>
+            <a id = "downButton_con" class  ="content_button_down"><img src="Images/arrow.png"/></a>
         </div>
     </div>
 </body>

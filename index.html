@@ -8,23 +8,26 @@
         <title></title>
         <link rel="stylesheet" type="text/css" href="CSS/CSS.css">
         <script src="js/collapse_uncollapse_topnav.js" defer></script>
-        
+        <style>a :not(.con) {
+            background-color: royalblue;
+            box-shadow: 5px 5px black;
+        }</style>
 
     </head>
     <body>
 
-        <h1>Silicon Valley</h1>
-
         <div class="topnav" id="myTopnav">
             <a href="#" id="hambutton" class="icon">=</a>
-            <a href="index.html" >Homepage</a>
+            <a href="index.html" class="active">Homepage</a>
             <a href="General_info.html">General</a>
-            <a href="History.html" class="active">History</a>
+            <a href="History.html">History</a>
             <a href="Notable.html">Notable People</a>
         </div> 
 
+        <div class="container">
 
-        <img class="index_img" src="Images/index_img.jpg">
-
+            <h1 id = "indexh1">Silicon Valley</h1>
+            <img class="index_img" src="Images/index_img.jpg">
+        </div>
     </body>
 </html>
