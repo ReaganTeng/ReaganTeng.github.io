@@ -264,6 +264,11 @@ display: none;
     .data3, .data4, .data5 {
         width: 33.33%;
     }
+
+
+    .content_arrow {
+        display: block;
+    }
 }
 
 /*Phone*/
