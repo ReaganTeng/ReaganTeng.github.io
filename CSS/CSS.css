@@ -234,7 +234,7 @@ display: none;
 /*Tablet*/
 @media screen and (min-width:540px) {
     .data {
-        height: 50%;
+        height: 70%;
     }
 
     .data2, .data3 {
@@ -255,8 +255,12 @@ display: none;
     }
 }
 
-/*Tablet*/
 @media screen and (min-width:720px) {
+
+    .data {
+        height: 70%;
+    }
+
     .data1, .data2 {
         width: 50%;
     }
@@ -265,10 +269,10 @@ display: none;
         width: 33.33%;
     }
 
-
     .content_arrow {
         display: block;
     }
+   
 }
 
 /*Phone*/
