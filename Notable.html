@@ -17,6 +17,8 @@
 <body>
 
     <div class="topnav" id="myTopnav">
+
+
         <a href="#" id="hambutton" class="icon">=</a>
         <a href="index.html" >Homepage</a>
         <a href="General_info.html">General</a>
@@ -33,18 +35,17 @@
     <!--side navigation menu to switch between companies-->
     <nav class="sidebar">
         <h3>Timelines</h3>
-        <div class ="con">
-            <a id = "upButton" class ="up"><img src="Images/arrow.png"/></a>
-        </div>
-        <div class ="con">
-            <a id = "downButton" class ="down"><img src="Images/arrow.png"/></a>
+
+        <div class="arrows_in_sidebar" >
+            <img id = "downButton" class ="arrow down " src="Images/arrow.png"/>
+            <img id = "upButton" class ="arrow up " src="Images/arrow.png"/>
         </div>
 
         <a  class="timeline">Apple</a>
-        <img id = "downButton" src="Images/timeline_arrow.png"/>
+        <img class = "timeline_arrow" src="Images/timeline_arrow.png"/>
 
         <a class="timeline">Microsoft</a>
-        <img id = "downButton" src="Images/timeline_arrow.png"/>
+        <img class = "timeline_arrow" src="Images/timeline_arrow.png"/>
 
         <a class="timeline">Google</a>
     </nav>
@@ -54,9 +55,7 @@
     <div class="content">
         <h1 id ="notableh1">Notable people/companies in Silicon Valley</h1>
 
-        <div class ="con">
-            <a id = "upButton_con"  class  ="content_button_up"><img src="Images/arrow.png"/></a>
-        </div>
+        <img class ="arrow up content_arrow " src="Images/arrow.png"/></a>
 
         <article class = "art-cls">
             <h1>Apple</h1>
@@ -81,9 +80,7 @@
             <p>Products: Youtube, Gmail</p>
         </article>
 
-        <div class ="con">
-            <a id = "downButton_con" class  ="content_button_down"><img src="Images/arrow.png"/></a>
-        </div>
+        <img class ="arrow down content_arrow " src="Images/arrow.png"/>
     </div>
 </body>
 </html>

@@ -17,18 +17,22 @@ input {
     font-size: 130%;
 }
 
-img {
+
+.arrows_in_sidebar {
+    grid-template-columns: 50%  50%; 
+}
+
+img:not(.arrow) {
     width: 40%;
-/*    height: 40%;
-*/    padding: 1%;
+    padding: 1%;
 }
 
 
+/*image for index*/
 .index_img {
-   width: 100%; 
+   height: 100%; 
 /*   margin-left:25%;
 */}
-
 
 #historyh1, #notableh1, #demoh1, #indexh1 {
     margin-top: 7%;
@@ -37,27 +41,16 @@ img {
     margin-left: 50%;
 }
 
-
-
-
-
-a /*:not(.content_button_down, .content_button_up, .up, .down)*/ {
-    background-color: royalblue;
+a:not(.timeline) {
+    background-color: #00BFFF;
     box-shadow: 5px 5px black;
-}
-
-a {
     margin: 1%;
 }
 
+a {
+    color: aliceblue;
 
-.con
-{
-    background-color:none;
 }
-/*#demoh1{
-    margin-top: 15%;
-}*/
 
 .data1, .data3, .data5 {
     background-color: #FF4000;
@@ -73,8 +66,7 @@ a {
     width: 100%;
     height: 27em;
     color: white;
-/*    margin: 0.03%;
-*/
+
 }
 
 .data h1, .data h3, .data a
@@ -105,107 +97,85 @@ a {
     }
 
 
+    /*@keyframes rotation
+    {
+        0%
+        {
+            rotation:1;
+
+        }
+    }*/
+
+
     /*make sure space is reserved for element*/
     /*step 1: set every display same size, position relative*/
 
    
-
-    a {
-        color: aliceblue;
-    }
-
-
-    /*UP AND DOWN BUTTONS*/
-#downButton, .content_button_down {
+.down, .timeline_arrow {
     transform: rotate(90deg);
 }
 
-#upButton, .content_button_up {
+.up {
     transform: rotate(-90deg);
 }
 
-    #downButton, #upButton, .content_button_up, .content_button_down {
-        width: 10%;
-        height: 5%;
-        margin: 2%;
-        cursor: pointer;
-        padding: 1.5%;
-/*        border-radius: 50%;
-*/        /*position:fixed;*/
-    }
 
+.timeline_arrow
+{
+    height: 10%;
+    margin: 3%;
+}
 
-        #downButton img, #upButton img, #upButton_con img, #downButton_con img {
-            width: 200%;
-            height: 200%;
-/*            border-radius: 50%;
-*/        }
+.arrow {
+    width: 30%;
+    cursor: pointer;
+}
 
-
-
-
-    .con {
-        padding: 2%;
-    }
-
-
-    .phone{
-        display:none;
-    }
+.phone{
+    display:none;
+}
     
-    .art-cls
-    {
-        background-color: darkblue;
-        color: white;
-    }
+.art-cls
+{
+    background-color: darkblue;
+    color: white;
+}
 
 
 
-    /*FOR SIDE NAVIGATION MENU*/
-    nav {
-        margin-top: 5%;
-        padding: 0;
-        width: 15%;
-        background-color: darkturquoise;
-        float:left;
-        position: fixed;
+/*FOR SIDE NAVIGATION MENU*/
+nav {
+    margin-top: 5%;
+    padding-bottom: 10%;
+    width: 15%;
+    background-color: darkturquoise;
+    float:left;
+    position: fixed;
 /*          overflow:hidden;
 */        height: 100%;
 
-        overflow: scroll;
-    }
+    overflow: scroll;
+}
 
-    .content_button_up, .content_button_down {
-        display: none;
-    }
+.content_arrow {
+    display: none;
+}
 
-    /* Sidebar links */
-    nav a {
-        display: block;
-        color: black;
-        /*    background-color: white;
-    */ padding: 1%;
-            text-decoration: none;
-    }
+/* Sidebar links */
+nav a {
+    display: block;
+    color: black;
+   padding: 1%;
+      text-decoration: none;
+}
 
-    /* Active/current link */
-    /*nav a.active {
-    background-color: cornflowerblue;
-    color: white;
-}*/
 
-    /* Links on mouse-over */
-    /*nav a:hover:not(.active) {
-    background-color: darkcyan;
-    color: white;
-}*/
-
-    /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-    .content {
-        margin-left: 15%;
-        padding: 1%;
-        height: 100%;
-    }
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+.content {
+    margin-left: 15%;
+    padding: 1%;
+    height: 100%;
+}
 
 
 
@@ -220,16 +190,6 @@ a {
     position: fixed;
 }
 
-/*nav {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: darkturquoise;*/
-    /*        float:left;
-*/ /*position: fixed;
-    height: 100%;
-    overflow: scroll;
-}*/
 
 
 /* Style the links inside the navigation bar */
@@ -260,31 +220,36 @@ a {
 display: none;
 }
 
-
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 /*Tablet*/
 @media screen and (max-width: 720px) {
 
 
-    /*.lightblue, .green {
+
+
+}
+
+
+
+@media screen and (min-width:540px) {
+    .data2, .data3 {
         width: 50%;
-    }*/
-
-
-    /*.lightblue, .green {
-    width: 50%;
+    }
 }
 
-.darkblue {
-    width: 50%;*/
-    /*        height: 20em*/
-    /*height: 50%;
-}
+@media screen and (min-width:720px) {
+    .data1, .data2 {
+        width: 50%;
+    }
 
-#container2 {
-    width: 50%
-}*/
+    .data3, .data4, .data5 {
+        width: 33.33%;
+    }
 }
 
 
@@ -295,7 +260,7 @@ display: none;
     }
 
        
-    .content_button_up, .content_button_down {
+    .content_arrow {
         display: block;
     }
 
@@ -343,32 +308,14 @@ display: none;
         text-align: left;
     }
 
-    .data img {
+    .data img/*, img:not(.arrow_img)*/ {
         width: 100%;
     }
+
+
 }
 
 
-@media screen and (min-width:540px) {
-    .data2, .data3 {
-        width: 50%;
-    }
-
-   
-}
-
-@media screen and (min-width:720px) {
-    .data1, .data2 {
-        width: 50%;
-    }
-
-    .data3, .data4, .data5 {
-        width: 33.33%;
-    }
-}
 
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
+
