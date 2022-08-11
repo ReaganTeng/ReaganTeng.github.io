@@ -194,10 +194,8 @@ nav a {
     flex-wrap: wrap;
 }
 
-
-
 /*Tablet*/
-@media screen and (min-width:540px) and (max-width: 720px) {
+@media screen and (max-width: 720px) {
     .data {
         height: 50em;
     }
@@ -220,12 +218,12 @@ nav a {
     }
 }
 
-
 /*Phone*/
-@media screen and (min-width: 0px) and (max-width: 540px) {
+@media screen and (max-width: 540px) {
 
     .data {
-        height: 30%;
+        height: 50em;
+        width: 100%;
     }
 
     .content_arrow {
@@ -253,22 +251,15 @@ nav a {
         position: relative;
     }
 
-        /*Hide all links*/
-        .topnav a {
-            display: none;
-        }
-
-            .topnav a.icon {
-                float: right;
-                display: block;
-            }
-
-
-
-    .index_img {
-        height: 200%;
+    /*Hide all links*/
+    .topnav a {
+        display: none;
     }
 
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
 
 
     /* For the toggling of hamburger menu, displaying it vertically*/
@@ -292,6 +283,21 @@ nav a {
         width: 100%;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
