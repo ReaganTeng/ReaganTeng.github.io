@@ -82,10 +82,10 @@ a {
 }
 
 
-    .data img {
-        height: 20em;
-       width: 20em;
-    }
+.data img {
+    height: 65%;
+    width: 70%;
+}
 
 article {
     background-color: darkblue;
@@ -236,6 +236,10 @@ display: none;
     .data2, .data3 {
         width: 50%;
     }
+
+    .topnav {
+        position: relative;
+    }
 }
 
 /*Tablet*/
@@ -297,11 +301,7 @@ display: none;
 
     }
 
-    /*.container {
-        width: 200%;
-        margin-left: 0;*/
-/*        margin-right:20%;
-*/    /*}*/
+   
 
     /* For the toggling of hamburger menu, displaying it vertically*/
     .topnav.responsive {
