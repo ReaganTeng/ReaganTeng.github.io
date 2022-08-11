@@ -1,16 +1,22 @@
 
-let bDown = document.querySelectorAll(".down");
-let bUp = document.querySelectorAll(".up");
+let bDown = document.querySelector(".down");
+let bUp = document.querySelector(".up");
 
 
-for (let i = 0; i < bDown.length; i++) {
-    bDown[i].addEventListener("click", goDown);
-    bUp[i].addEventListener("click", goUp);
+
+bDown.addEventListener("click", goDown);
+bUp.addEventListener("click", goUp);
+
+
+
+let selectedbutton = document.querySelectorAll(".timeline");
+for (let i = 0; i < selectedbutton.length; i++) {
+    selectedbutton[i].addEventListener("click",
+        ()=> {
+            current_arti = i;
+            displayCur();
+        })
 }
-
-
-const selectedbutton = document.querySelectorAll(".timeline");
-
 
 
 
@@ -35,7 +41,6 @@ art_list.forEach(ele => {
 
 
 function displayCur() {
-  
 
     for (var j = 0; j < art_list.length; j++) {
 
@@ -49,45 +54,24 @@ function displayCur() {
 
         }
     }
-    
-    
+
+    document.getElementById("end_of_page").innerHTML = "";
+    document.getElementById("start_of_page").innerHTML = "";
 }
 
 
-/*//animation least priority
-//prioritise on responsive*/
-//function arrayselected() {
-//    //if (current_arti != art_list.length - 1) {
-//    //    current_arti++;
-//    //    displayCur();
-//    //}
-//    //else {
-//    //    alert("End of page!");
-//    //}
-//    //current_arti = ;
-//    alert(j);
-//    //return indexOf();
-//    //alert(selectedbutton.indexOf);
-//    displayCur();
-//}
-
-
-
-//function chooseApple(a) {
-//    current_arti = a;
-//    displayCur();
-//}
-
 function goDown() {
 
+    
     if (current_arti != art_list.length - 1) {
         current_arti++;
         displayCur();
     }
     else {
     //    document.getElementById("informing") = "End of page";
-        alert("End of page!");
+        //alert("End of page!");
 
+        document.getElementById("end_of_page").innerHTML = "END OF PAGE!";
     }
 }
 
@@ -98,9 +82,14 @@ function goUp() {
         displayCur();
     }
     else {
-        alert("Start of page!");
+        document.getElementById("start_of_page").innerHTML = "START OF PAGE!";
+
+
     }
 }
+
+
+
 
 
 var current_arti = 0;
