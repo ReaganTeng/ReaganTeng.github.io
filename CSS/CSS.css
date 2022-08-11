@@ -234,7 +234,7 @@ display: none;
 /*Tablet*/
 @media screen and (min-width:540px) {
     .data {
-        height: 30%;
+        height: 50%;
     }
 
     .data2, .data3 {
