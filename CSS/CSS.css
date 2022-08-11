@@ -233,12 +233,21 @@ display: none;
 
 /*Tablet*/
 @media screen and (min-width:540px) {
+    .data {
+        height: 30%;
+    }
+
     .data2, .data3 {
         width: 50%;
     }
 
     .topnav {
         position: relative;
+    }
+
+    nav {
+        display: none;
+        width: 0px;
     }
 }
 
