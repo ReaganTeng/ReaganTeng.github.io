@@ -249,6 +249,10 @@ display: none;
         display: none;
         width: 0px;
     }
+
+    .content_arrow {
+        display: block;
+    }
 }
 
 /*Tablet*/
