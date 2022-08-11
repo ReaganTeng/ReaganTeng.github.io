@@ -1,12 +1,4 @@
 
-let bDown = document.querySelector(".down");
-let bUp = document.querySelector(".up");
-
-
-
-bDown.addEventListener("click", goDown);
-bUp.addEventListener("click", goUp);
-
 
 
 let selectedbutton = document.querySelectorAll(".timeline");
@@ -18,14 +10,6 @@ for (let i = 0; i < selectedbutton.length; i++) {
         })
 }
 
-
-
-//make use of more spaces
-//if goes small, make picture big
-//Colour can be lesser
-//font spacing
-//nicer buttons
-//wording color
 
 
 
@@ -40,6 +24,7 @@ art_list.forEach(ele => {
 
 
 
+//display the current display
 function displayCur() {
 
     for (var j = 0; j < art_list.length; j++) {
@@ -60,6 +45,17 @@ function displayCur() {
 }
 
 
+
+let bDown = document.querySelector(".down");
+let bUp = document.querySelector(".up");
+
+
+
+bDown.addEventListener("click", goDown);
+bUp.addEventListener("click", goUp);
+
+
+//go to next index if down arrow is tapped
 function goDown() {
 
     
@@ -68,14 +64,13 @@ function goDown() {
         displayCur();
     }
     else {
-    //    document.getElementById("informing") = "End of page";
-        //alert("End of page!");
+  
 
         document.getElementById("end_of_page").innerHTML = "END OF PAGE!";
     }
 }
 
-
+//go to previous index if down arrow is tapped
 function goUp() {
     if (current_arti != 0) {
         current_arti--;
